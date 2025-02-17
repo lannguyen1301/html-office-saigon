@@ -1,0 +1,77 @@
+/* styles.css */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #2c3e50, #3498db);
+    font-family: Arial, sans-serif;
+}
+
+.slider {
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    width: 80%;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out,
+        scale 0.5s ease-in-out;
+}
+
+/* Item ở giữa (đang hiển thị) */
+.slide.active {
+    opacity: 1;
+    transform: translateY(0) scale(1.2);
+    z-index: 10;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Item trên (đã hiển thị rồi) */
+.slide.top {
+    opacity: 0.5;
+    transform: translateY(-110%) scale(1);
+    z-index: 5;
+}
+
+/* Item dưới (chưa hiển thị) */
+.slide.bottom {
+    opacity: 0.5;
+    transform: translateY(110%) scale(1);
+    z-index: 5;
+}
+
+/* Vòng tròn số */
+.circle {
+    width: 50px;
+    height: 50px;
+    background: rgba(173, 216, 230, 0.8);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.content h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.content p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: gray;
+}

@@ -1,0 +1,79 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-body: #f5f5f5;
+    --prymari-color: #3b5998;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins" sans-serif;
+    background: var(--background-body);
+}
+
+/* Commont */
+a {
+    text-decoration: none;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* header */
+.header {
+}
+
+.header-right {
+}
+
+.header__logo {
+}
+
+.header__link {
+}
+
+.header__logo-img {
+}
+
+.header__content {
+}
+
+.header__content-comp {
+}
+
+.header__content-title {
+}
+
+.header-left {
+}
+
+.header-left--schedule {
+}
+
+.header-left--schedule-desc {
+}
+
+.header-left--schedule-numb {
+}
+
+.header-left__compare {
+}
+
+.header-left__compare-desc {
+}
+
+.header-left__compare-numb {
+}

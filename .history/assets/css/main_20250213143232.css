@@ -1,0 +1,1332 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-body: #fff;
+    --primary-color: #135e9c;
+
+    --breadcrumb-color: #e5e5e5;
+    --link-hover: #1f7a8c;
+    --font-color: #333;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+    background: var(--background-body);
+    height: auto;
+}
+
+/* Commont */
+a {
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.h2__title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.h3__title {
+    color: yellow;
+    font-size: 1.8rem;
+    text-align: justify;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.problem-impact__desc {
+    font-size: 1.6rem;
+    color: #fff;
+    line-height: 1.4;
+    text-align: justify;
+    margin-top: 16px;
+}
+
+.content {
+    width: 1230px;
+    max-width: calc(100% - 48px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-head {
+    width: 95px;
+    /* line-height: 30px; */
+    font-weight: 300;
+    font-size: 1.3rem;
+    padding: 20px;
+    width: 96px;
+    color: var(--font-color);
+    background: #e5e5e5;
+}
+
+/* Start BTN */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    /* 1. Display & Box Model */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / 3);
+    height: 50px;
+
+    /* 2. Positioning */
+    position: relative;
+    overflow: hidden;
+
+    /* 3. Spacing */
+    margin: 25px auto 0;
+
+    /* 4. Typography */
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    color: red;
+    line-height: 50px;
+
+    /* 5. Visual */
+    background-color: transparent;
+    border: 1px solid red;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+
+    /* 6. Effects & Interaction */
+    transition: background-color 0.4s, color 0.4s;
+}
+
+/* Hiệu ứng hover */
+.btn::before {
+    content: "Đăng ký ngay";
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.btn span {
+    display: block;
+    transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.btn:hover {
+    background-color: red;
+    color: white;
+}
+
+.btn:hover span {
+    transform: translateY(-100%);
+}
+
+.btn:hover::before {
+    transform: translateY(0);
+}
+
+/* End BTN */
+
+.inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* header */
+.header__fixed {
+    position: sticky;
+    padding-top: 20px;
+    top: -20px;
+    width: 100%;
+    z-index: 999;
+    background-color: #fff;
+}
+
+.row-header {
+    padding: 10px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.header__content {
+    text-align: center;
+}
+
+.header__content-comp {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.header__content-title {
+    margin-top: 10px;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--font-color);
+}
+
+.header-right__compare,
+.header-right--schedule {
+    --header-right-height: 30px;
+    height: var(--header-right-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background: #d9d6d6;
+    border-radius: 4px;
+
+    gap: 10px;
+    cursor: pointer;
+}
+
+.header-right__compare:hover,
+.header-right--schedule:hover {
+    background: #e5e5e5;
+}
+
+.header-right__compare-desc,
+.header-right--schedule-desc {
+    /* padding: 10px; */
+    font-size: 1.3rem;
+    color: var(--font-color);
+    font-weight: 600;
+}
+
+.header-right__compare-numb,
+.header-right--schedule-numb {
+    font-size: 1.3rem;
+    font-weight: 500;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #f47502;
+    color: #fff;
+}
+
+/* Navbar */
+.navbar__inner {
+    --navbar-hight: 50px;
+    background-color: var(--primary-color);
+    line-height: var(--navbar-hight);
+}
+
+.row-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row-nav__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.navbar__list .navbar__items:hover {
+    background-color: #f5f9fa;
+}
+
+.navbar__items:hover > a .icon_svg,
+.navbar__items:hover > a .down-arrow {
+    fill: var(--link-hover);
+}
+
+.navbar__items:hover > a {
+    color: var(--link-hover);
+}
+
+.navbar__link {
+    height: var(--navbar-hight);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px 5px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.icon_svg {
+    width: 25px;
+    height: auto;
+    fill: #fff;
+}
+
+.navbar__items a {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Tạo khoảng cách giữa chữ và mũi tên */
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff9100;
+    height: 40px;
+    /* width: 100%; */
+    border-radius: 4px;
+}
+
+.navbar-right:hover {
+    background-color: var(--link-hover);
+}
+
+.navbar__vr360 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    gap: 10px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    --breadcrumb-height: 40px;
+    background-color: var(--breadcrumb-color);
+    height: var(--breadcrumb-height);
+    line-height: var(--breadcrumb-height);
+}
+
+.breadcrumb__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--breadcrumb-height);
+    font-size: 1.3rem;
+    color: var(--font-color);
+}
+
+.breadcrumb__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.breadcrumb__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: var(--font-color);
+    font-size: 1.3rem;
+}
+
+.breadcrumb__link-active {
+    color: var(--link-hover);
+    font-weight: 600;
+}
+
+/* Banner */
+.row-banner {
+}
+
+.banner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    object-fit: cover;
+}
+
+.title {
+    position: absolute;
+    top: 96px;
+    left: 60px;
+    font-size: 10rem;
+    color: #fff;
+    /* background-color: orange; */
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Problems */
+.inner__problem {
+    margin-top: 30px;
+}
+.problem__title {
+    display: flex;
+    flex-wrap: wrap;
+    height: 166px;
+    align-items: center;
+    justify-content: center;
+    color: red;
+    font-weight: 700;
+    gap: 40px;
+}
+
+.problem__numb {
+    display: flex;
+    align-items: center;
+    font-size: 15rem;
+}
+
+.problem__desc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+/* Đặt lại bộ đếm cho danh sách */
+.row__problem {
+    counter-reset: problem-counter;
+}
+
+.problem__item {
+    counter-increment: problem-counter;
+    position: relative;
+    padding: 30px 20px;
+    font-size: 1.6rem;
+    border-radius: 20px;
+    background-color: var(--primary-color);
+    min-height: 300px;
+}
+.problem__item::after {
+    content: counter(problem-counter);
+    position: absolute;
+    display: inline-block;
+    z-index: 2;
+    font-size: 1.8rem;
+    font-weight: 700;
+    top: 5px;
+    left: 5px;
+    right: 0;
+    color: red;
+}
+
+.problem__item::before {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: 0;
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    background-color: #fff;
+    z-index: 1;
+}
+
+/* Impact */
+.impact {
+    margin-top: 40px;
+    background-color: var(--primary-color);
+    padding-bottom: 50px;
+}
+
+.impact__title {
+    margin-top: 50px;
+}
+
+.impact__item {
+    background-color: red;
+    color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    min-height: 210px;
+}
+
+/* Solution */
+.solution {
+    margin-top: 40px;
+}
+
+/* Hiệu ứng chuyển sắc cho danh sách UL */
+@keyframes color {
+    0% {
+        background: #33cccc;
+    }
+    20% {
+        background: #33cc36;
+    }
+    40% {
+        background: #b8cc33;
+    }
+    60% {
+        background: #fcca00;
+    }
+    80% {
+        background: #33cc36;
+    }
+    100% {
+        background: #33cccc;
+    }
+}
+
+.solution-containt__item {
+    border: 1px solid var(--primary-color);
+    animation: color 9s infinite linear; /* Hiệu ứng chuyển sắc */
+    padding: 25px;
+    border-radius: 5px;
+}
+
+/* Chỉ áp dụng margin-top: 15px cho các article từ thứ 2 trở đi */
+.solution-containt .col-lg-12:nth-of-type(n + 2) .solution-containt__item {
+    margin-top: 30px;
+}
+
+.solution__title {
+    color: var(--primary-color);
+}
+
+.solution__desc {
+    font-size: 1.6rem;
+    color: var(--font-color);
+    line-height: 1.4;
+    margin: 20px auto 10px;
+    text-align: justify;
+}
+
+.solution-containt__title {
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0px 0px 15px;
+}
+
+.solution__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Khoảng cách giữa các dòng */
+}
+
+.solution__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    font-size: 1.6rem;
+    color: var(--font-color);
+    line-height: 1.4;
+    margin-top: 5px;
+    padding-left: 24px; /* Đẩy nội dung sang phải để chừa chỗ cho icon */
+}
+
+.solution__item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-image: url('data:image/svg+xml;utf8,<svg class="solution-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8l176 0 0 176c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    rotate: 45deg;
+}
+
+/* Consulting */
+.consulting {
+    margin-top: 40px;
+}
+
+.consulting__info {
+    --consulting-height: 100px;
+    background-color: var(--primary-color);
+    height: var(--consulting-height);
+    line-height: var(--consulting-height);
+    text-align: center;
+}
+
+.consulting__title {
+    text-align: center;
+    line-height: var(--consulting-height);
+}
+
+/* TABLE */
+/* Định dạng container bọc bảng */
+.table-responsive {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Đảm bảo cuộn ngang trên màn hình nhỏ */
+}
+
+/* Định dạng bảng */
+.service-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+/* Tiêu đề bảng */
+.service-table thead {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+.service-table th {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+/* Ô trong bảng */
+.service-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Cột tiêu đề đầu tiên */
+.service-table td:first-child {
+    text-align: left;
+    font-weight: bold;
+    background-color: #f9f9f9;
+}
+
+/* Dòng kẻ xen kẽ */
+.service-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Định dạng dấu tích */
+.service-table td:contains("✔") {
+    color: green;
+    font-size: 1.2rem;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .table-responsive {
+        padding: 10px;
+    }
+
+    .service-table thead {
+        display: none; /* Ẩn tiêu đề cột trên mobile */
+    }
+
+    .service-table tbody,
+    .service-table tr,
+    .service-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .service-table tr {
+        margin-bottom: 10px;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .service-table td {
+        text-align: left;
+        padding-left: 50%;
+        position: relative;
+        border: none;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .service-table td:first-child {
+        font-weight: bold;
+        background: none;
+        padding-left: 10px;
+    }
+
+    .service-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: var(--consulting-height);
+    }
+}
+/* END TABLE */
+
+/* Procedure */
+.procedure {
+    margin-top: 40px;
+    background-color: var(--primary-color);
+}
+
+.procedure__title {
+    padding: 30px;
+}
+
+/* Reason */
+.reason {
+    margin-top: 40px;
+    background-color: var(--primary-color);
+}
+
+.row-reason {
+    justify-content: space-between;
+    align-content: center;
+    padding-bottom: 40px;
+}
+
+.reason__title {
+    margin: 30px 0;
+}
+
+.reason__img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.reason__subtitle {
+    font-size: 2.6rem;
+    /* color: var(--primary-color); */
+    color: #000;
+    font-weight: 500;
+}
+
+.reason__subdesc {
+    margin-top: 10px;
+    font-size: 1.6rem;
+
+    /* color: var(--font-color); */
+    color: #fff;
+}
+
+.reason__title-list {
+    margin: 20px 0 10px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #fff;
+    /* color: var(--font-color); */
+}
+
+.reason__desc-list {
+    font-weight: 500;
+}
+
+/* Staff */
+.staff,
+.results {
+    margin-top: 40px;
+}
+
+.staff__title,
+.results__title {
+    position: relative;
+    font-size: 3.2rem;
+    color: var(--primary-color);
+    text-transform: none;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+.staff__title::before,
+.staff__title::after,
+.results__title::before,
+.results__title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ccc;
+}
+
+.staff__title::before,
+.results__title::before {
+    width: 100%;
+    height: 1px;
+    bottom: -6px; /* Line lớn */
+}
+
+.staff__title::after,
+.results__title::after {
+    width: 450px;
+    height: 5px;
+    bottom: -8px; /* Line nhỏ nằm dưới */
+    background-color: #aaa; /* Màu nhạt hơn */
+}
+
+/* Carousel */
+.row__carousel {
+    margin-top: 60px;
+}
+
+.staff__carousel,
+.results__carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    animation: carouselAnim 50s infinite alternate linear;
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 300px;
+    background: #fff;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+.staff__carousel-img,
+.results__carousel-img {
+    display: block;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    .items {
+        animation: carouselAnim 35s infinite alternate linear;
+    }
+
+    @keyframes carouselAnim {
+        from {
+            transform: translate(0, 0);
+        }
+        to {
+            transform: translate(calc(-100% + (2 * 300px)));
+        }
+    }
+}
+
+.name {
+    font-size: 2rem;
+    margin: 15px 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.experience {
+}
+
+@keyframes carouselAnim {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(calc(-100% + (5 * 300px)));
+    }
+}
+
+.container .faders {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.faders .right,
+.faders .left {
+    background: linear-gradient(
+        to right,
+        rgba(245, 245, 245, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    width: 10%;
+    height: 100%;
+    position: absolute;
+    z-index: 50;
+}
+
+.right {
+    right: 0;
+    background: linear-gradient(
+        to left,
+        rgba(245, 245, 245, 1) 0%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+/* End Carousel */
+
+/* Results */
+.results {
+    margin-top: 40px;
+}
+
+/* Achievements Thành Tựu */
+.achievements {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    height: 350px;
+    overflow: hidden;
+}
+.achievements::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    z-index: -2;
+}
+
+.achievements::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg class='achievements__background' id='Layer_1' data-name='Layer 1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 5000 2916'%3E%3Cdefs%3E%3Cstyle%3E .cls-1 %7B fill: %23fff; %7D %3C/style%3E%3C/defs%3E%3Cpath class='cls-1' d='M0,2642.07c316.17-172.7,724.23-596.18,1141.84-1029.62,150.07-155.76,301.36-312.79,450.09-459.94C2183.07,567.66,2733.32,139.28,3003,569.36,4039.27,2221.79,4646.78,2633.89,5000,2587.1v1c-353.54,46.69-961.32-365.62-1997.59-2018.1-269.29-429.42-819.19-1.21-1410,583.32-148.69,147.11-300,304.15-450.07,459.92C724.59,2046.81,316.39,2470.44,0,2643.11Z' /%3E%3Cpath class='cls-1' d='M0,2578.33c311.6-166.13,710.82-568.92,1120.05-981.86C1862.93,846.87,2638.77,64,2984.07,603h0C4037.84,2274.76,4648.32,2627.69,5000,2535.12v1.23c-352,92.43-962.71-260.87-2016.55-1932.69h0C2638.65,65.41,1863.13,848,1120.55,1597.25,711.17,2010.33,311.81,2413.27,0,2579.37Z' /%3E%3Cpath class='cls-1' d='M0,2514.75c307-159.48,697.46-542,1098.39-934.78C1837.5,855.83,2612,97,2965.11,636.72h0C4035.88,2326.3,4649.58,2615.7,5000,2478.08v1.2C4649.29,2616.78,4035.32,2327,2964.49,637.35c-352.58-539-1126.81,219.56-1865.62,943.41C697.81,1973.7,307.21,2356.33,0,2515.79Z' /%3E%3Cpath class='cls-1' d='M0,2451.48C302.37,2298.7,684.2,1936,1076.84,1563c735.28-698.53,1508.43-1433,1869.31-892.56h0C4033.71,2376.9,4650.52,2597,5000,2415.18v1.21C4650.23,2598.05,4033.14,2377.58,2945.54,671h0C2585.15,131.29,1812.31,865.5,1077.32,1563.75,684.53,1936.91,302.57,2299.75,0,2452.52Z' /%3E%3Cpath class='cls-1' d='M2926.59,704.73h0M0,2388.38c297.7-146,671-489.33,1055.42-842.94,731.39-672.75,1503-1382.54,1871.77-841.36h0C4030.89,2425.84,4651.05,2571.6,5000,2347.55v1.12c-349.29,223.9-969.78,77.71-2073.41-1643.95-368.25-540.47-1139.61,169-1870.71,841.52C671.31,1900,297.89,2243.41,0,2389.43Z' /%3E%3Cpath class='cls-1' d='M0,2325.55C293,2186.33,657.83,1862,1034.1,1527.42,1761.55,880.6,2531.61,195.88,2908.23,737.76h0C4027.37,2473,4651.08,2539,5000,2275.19v1.17c-349.28,263.69-973.33,197.17-2092.37-1538-376.15-541.2-1145.91,143.25-1873.07,789.82C658.15,1862.91,293.19,2187.38,0,2326.59Z' /%3E%3Cpath class='cls-1' d='M0,2263c288.26-132.39,644.75-438.26,1012.89-754.13,723.45-620.74,1491.84-1280,1876.38-737.46v0C4023.09,2518.37,4650.56,2499.05,5000,2198.67v1.2c-349.8,300.26-977.61,319-2111.32-1427.77h0C2504.6,230.17,1736.5,889.22,1013.33,1509.72c-368.27,316-724.89,622-1013.33,754.34Z' /%3E%3Cpath class='cls-1' d='M0,2200.67c283.49-125.5,631.7-413.21,991.77-710.78,719.41-594.51,1486-1228.05,1878.54-684.77v0C4017.73,2561.36,4649.4,2451.74,5000,2119v1.25c-351,332.68-983,441.6-2130.27-1314.43-392.07-542.65-1158.39,90.64-1877.52,684.93C632,1788.39,283.66,2076.21,0,2201.7Z' /%3E%3Cpath class='cls-1' d='M0,2138.66C278.67,2020.07,618.71,1750,970.75,1470.4c715.31-568.15,1480.07-1175.58,1880.6-631.6l0,0C4011.25,2601.9,4647.55,2397,5000,2036.68V2038c-352.82,360.25-989.47,564.41-2149.24-1198.5h0c-400.1-543.34-1164.56,63.85-1879.59,631.78C619,1751,278.84,2021.11,0,2139.69Z' /%3E%3Cpath class='cls-1' d='M0,2076.89c273.82-111.66,605.76-364.43,949.81-626.46C1661,908.79,2423.8,327.81,2832.39,872.48l0,0C3987.11,2615.06,4627,2343,4985.06,1968.69q7.56-7.89,14.94-15.85v1.31q-7.14,7.68-14.44,15.3C4627.28,2344,3987,2616.37,2831.82,873.16c-408.16-544.09-1170.7,36.68-1881.61,578.12C606,1713.4,274,1966.27,0,2077.92Z' /%3E%3Cpath class='cls-1' d='M0,2015.42C268.94,1910.71,592.84,1674.8,928.94,1430c707-515,1467.79-1069.2,1884.49-523.82l0,0C3994,2674.34,4641.52,2265.7,5000,1868.1v1.34c-358.8,397.68-1006.63,805.48-2187.15-962.6-416.28-544.8-1176.8,9.19-1883.52,524C593.12,1675.75,269.09,1911.74,0,2016.44Z' /%3E%3Cpath class='cls-1' d='M0,1954.27c264-97.75,580-317.23,908.14-545.21C1610.9,920.84,2369.61,393.75,2794.47,939.84l0,0C3983.07,2705.93,4637.3,2189.64,5000,1783.5v1.33c-363,406.3-1017.56,921.7-2206.11-844.31C2369.45,395,1611,921.89,908.52,1409.93,580.23,1638,264.16,1857.55,0,1955.3Z' /%3E%3Cpath class='cls-1' d='M0,1893.39c259-90.79,567.1-294.2,887.39-505.73,698.51-461.31,1455-960.94,1888.12-414.14l0,0C3970.42,2734.25,4632.25,2107.07,5000,1699.82v1.33c-368.06,407.49-1030.21,1033.69-2225.06-726.94C2342.28,427.94,1586,927.4,887.76,1388.54,567.35,1600.15,259.18,1803.63,0,1894.41Z' /%3E%3Cpath class='cls-1' d='M0,1832.89c254-83.82,554.26-271.65,866.69-467.09,694.21-434.27,1448.52-906.13,1889.86-358.59l0,0C3947.46,2746.72,4616.93,2028.72,4992.1,1626.36l7.9-8.47v1.3l-7.39,7.92c-375.38,402.6-1045.24,1121-2236.62-619.21C2315,460.88,1561,932.58,867,1366.69,554.51,1562.2,254.15,1750.09,0,1833.91Z' /%3E%3Cpath class='cls-1' d='M0,1772.64c249-76.87,541.42-249.42,846-429.17,689.89-407.11,1441.89-850.87,1891.56-302.58l0,0c1143.56,1655,1814.82,960.28,2204.91,556.54,19.88-20.57,39-40.39,57.48-59.11v1.28c-18.29,18.56-37.27,38.21-57,58.6-390.3,404-1061.93,1099.09-2206-556.64C2287.75,493.8,1536,937.4,846.36,1344.37,541.65,1524.18,249.09,1696.79,0,1773.66Z' /%3E%3Cpath class='cls-1' d='M0,1712.81c243.84-70,528.6-227.71,825.38-392.14,685.54-379.82,1435.19-795.15,1893.25-246.1h0l0,0c1098,1573.78,1769.59,899.08,2173.3,493.48,38.39-38.57,74.35-74.7,108-106.24v1.23c-33.54,31.43-69.34,67.4-107.54,105.78-403.93,405.82-1075.85,1080.89-2174.38-493.57C2260.4,526.7,1511,941.89,825.7,1321.58,528.82,1486.06,244,1643.87,0,1713.82Z' /%3E%3Cpath class='cls-1' d='M0,1653.27c238.67-63,515.75-206.36,804.75-355.88,681.16-352.4,1428.4-739,1894.92-189.14h0l0,0c1054.17,1495.49,1724.67,838.09,2140.78,430.11,58-56.86,111-108.86,159.52-149.55V1390c-48.33,40.61-101.22,92.46-159,149.14-416.34,408.2-1087.19,1065.94-2141.84-430.2C2233,559.57,1486,946,805.05,1298.31,516,1447.87,238.79,1591.23,0,1654.28Z' /%3E%3Cpath class='cls-1' d='M0,1594.14c233.44-56.19,502.9-185.51,784.1-320.5,676.77-324.86,1421.55-682.37,1896.61-131.71h0l0,0c1011.8,1419.9,1680,777.48,2107.37,366.63,78.54-75.51,149-143.2,211.89-188.86v1.14c-62.78,45.62-133.05,113.17-211.41,188.51C4361,1920.45,3692.45,2563.2,2680.17,1142.65c-474.7-550.22-1219.24-192.83-1895.79,131.92C503.09,1409.6,233.55,1539,0,1595.15Z' /%3E%3Cpath class='cls-1' d='M0,1535.36c228.16-49.37,490-165.09,763.43-285.95,672.36-297.2,1414.65-625.31,1898.32-73.8h0l0,0C3632.6,2522.47,4297.41,1893,4734.88,1478.83c99.9-94.59,187.95-177.95,265.12-224v1.1c-77,46.08-164.92,129.31-264.65,223.73C4297.66,1894,3632.51,2523.8,2661.22,1176.34c-483.33-551.1-1225.38-223.1-1897.53,74C490.18,1371.24,228.26,1487,0,1536.37Z' /%3E%3Cpath class='cls-1' d='M0,1477c222.8-42.62,477.07-145.16,742.7-252.31,668-269.42,1407.72-567.8,1900.09-15.4h0v0c931.11,1276.09,1591.47,657.92,2038,239.93,121.93-114.14,227.92-213.35,319.18-255.07v1.06c-91.08,41.73-196.94,140.82-318.71,254.81-446.75,418.2-1107.45,1036.69-2039-240C2150.22,658,1410.68,956.3,743,1225.63,477.23,1332.81,222.9,1435.38,0,1478Z' /%3E%3Cpath class='cls-1' d='M0,1419c217.37-35.94,464.06-125.7,721.91-219.55C1385.43,958,2122.65,689.62,2623.83,1243h0l0,0c892.58,1207.57,1547.54,599.21,2002.08,177,144.52-134.24,268.79-249.65,374.06-282v1c-105.07,32.37-229.22,147.68-373.59,281.77-454.76,422.41-1110,1031.07-2003.11-177.11-500.85-553-1237.85-284.73-1901.18-43.29C464.22,1294.29,217.46,1384.08,0,1420Z' /%3E%3Cpath class='cls-1' d='M0,1361.5c211.86-29.34,451-106.79,701-187.77,659.11-213.48,1393.78-451.44,1903.87,102.92l0,0v0C3460.07,2417.8,4108.72,1818,4570.27,1391.26c167.56-154.93,310.46-287,429.73-304.94v1c-119,17.91-261.84,149.93-429.26,304.74C4109,1819,3460,2419.11,2604.34,1277.39c-509.78-554-1244.23-316.12-1903.14-102.7-250.08,81-489.27,158.47-701.2,187.81Z' /%3E%3Cpath class='cls-1' d='M0,1304.37c206.25-22.84,437.8-88.36,680-156.91,654.7-185.33,1386.82-392.57,1906,162.87l0,0v0c818.78,1076.61,1460.29,484.38,1927.87,52.71,183.61-169.51,340.43-314.28,470.72-323.63,5.2-.37,10.35-.45,15.47-.39v1c-5.11-.07-10.24,0-15.43.38-130,9.33-286.78,154-470.3,323.44-467.81,431.88-1109.63,1024.41-1928.88-52.81C2066.56,756,1334.65,963.16,680.13,1148.43,437.92,1217,206.32,1282.53,0,1305.36Z' /%3E%3Cpath class='cls-1' d='M0,1247.73c200.54-16.45,424.49-70.53,658.73-127.09C1309.05,963.59,2038.64,787.41,2567,1344h0l0,0c783.37,1014,1416.92,428.42,1889.57-8.42,192.83-178.22,358.89-331.7,497.52-341.86A183.31,183.31,0,0,1,5000,996v1a182.45,182.45,0,0,0-45.88-2.27c-138.39,10.14-304.37,163.54-497.1,341.67-472.88,437.06-1106.74,1022.9-1890.58,8.34-528-556.3-1257.42-380.16-1907.57-223.16C424.59,1178.19,200.6,1232.27,0,1248.72Z' /%3E%3Cpath class='cls-1' d='M0,1191.52c194.7-10.19,411-53.24,637.26-98.29C1283.24,964.6,2010.34,819.82,2548,1377.7h0l0,0c748.88,953.12,1373.72,373.54,1850.49-68.72,202.16-187.52,377.71-350.36,524.92-361.35,26.45-2,52,1.05,76.57,9.61v1c-24.59-8.59-50.09-11.62-76.53-9.65-147,11-322.43,173.74-524.48,361.16-477,442.47-1102.16,1022.34-1851.51,68.65C2010.1,820.87,1283.19,965.61,637.38,1094.21c-226.29,45.06-442.62,88.11-637.38,98.3Z' /%3E%3Cpath class='cls-1' d='M0,1135.82c188.73-4.09,397.31-36.6,615.49-70.63C1257.17,965.12,1981.85,852.1,2529,1411.38h0v0c715.26,894,1330.65,319.79,1810.63-128.05,211.6-197.44,396.9-370.34,552.94-382.2,37.5-2.84,73.3,3.64,107.37,21.28v1.06c-34.05-17.69-69.84-24.19-107.32-21.34-155.81,11.84-341,184.65-552.52,382-480.22,448.07-1095.9,1022.54-1811.64,128-546.92-559-1271.42-446-1912.93-346-218.21,34-426.81,66.55-615.59,70.63Z' /%3E%3Cpath class='cls-1' d='M0,1080.63c182.59,1.83,383.36-20.64,593.34-44.15,637.45-71.37,1359.79-152.25,1916.74,408.58h0v0c682.47,836.49,1287.7,267.26,1770-186.3,221.18-208,416.5-391.73,581.65-404.48,48.78-3.77,94.91,7.4,138.29,37.23v1.13c-43.36-29.92-89.48-41.14-138.24-37.37-164.91,12.74-360.15,196.36-581.23,404.28-482.49,453.79-1088,1023.29-1771,186.24C1952.88,885.25,1230.7,966.11,593.41,1037.47c-210,23.51-410.78,46-593.41,44.15Z' /%3E%3Cpath class='cls-1' d='M0,1025.94c176.26,7.55,369.08-5.38,570.71-18.91,633.3-42.52,1353.44-90.86,1920.41,471.71l0,0h0c650.47,780.59,1244.87,216,1728.48-243.35,230.88-219.29,436.52-414.61,611.07-428.3,60.23-4.72,116.75,12.22,169.31,57.23v1.19c-52.54-45.15-109-62.15-169.27-57.43-174.3,13.67-379.85,208.91-610.63,428.11C3736.25,1695.8,3141.55,2260.65,2490.61,1479.5,1923.88,917.18,1203.9,965.51,570.75,1008,369.11,1021.56,176.29,1034.49,0,1026.93Z' /%3E%3Cpath class='cls-1' d='M0,971.8c169.69,13,354.39,9.09,547.46,5,629.27-13.49,1347.4-28.87,1924.7,535.67v0h0c619.22,726.24,1202.13,166.1,1686.18-299,240.7-231.29,457-439.12,641.22-453.77,71.84-5.71,138.8,18,200.42,81v1.23c-61.6-63.24-128.54-87-200.37-81.27-184,14.64-400.19,222.37-640.79,453.57-484.29,465.38-1067.48,1025.79-1687.19,299C1894.58,948.87,1176.6,964.26,547.48,977.74,354.41,981.88,169.71,985.82,0,972.8Z' /%3E%3Cpath class='cls-1' d='M0,918.24c162.84,18.21,339.18,22.65,523.43,27.29,625.38,15.73,1341.74,33.76,1929.77,600.57l0,0c588.7,673.4,1159.46,117.62,1643-353.27,250.64-244.07,477.88-465.34,672.16-481,83.57-6.73,161,24.69,231.58,108.56v1.31c-70.55-84.1-148-115.61-231.53-108.87-194,15.63-421.19,236.81-671.73,480.78-483.82,471.12-1054.86,1027.18-1644,353.24-587.82-566.61-1304-584.63-1929.29-600.36C339.18,941.88,162.84,937.44,0,919.23Z' /%3E%3Cpath class='cls-1' d='M0,865.24c155.62,23.06,323.3,35.24,498.37,48,621.71,45.17,1336.62,97.12,1935.87,666.57l0,0c558.87,622.05,1116.85,70.63,1599-405.88,260.7-257.65,499.26-493.4,703.93-510.09C4832.6,656.06,4920.58,696,5000,803.25v1.4c-79.4-107.57-167.36-147.6-262.73-139.82-204.42,16.67-442.89,252.33-703.5,509.88-482.4,476.74-1040.65,1028.43-1600,405.87h0C1834.7,1011.3,1119.92,959.36,498.33,914.2c-175-12.72-342.71-24.91-498.33-48Z' /%3E%3Cpath class='cls-1' d='M0,812.86c147.94,27.46,306.54,46.68,472,66.71,618.29,74.87,1332.21,161.31,1943.3,733.9l0,0c529.72,572.16,1074.29,25.21,1554.12-456.72C4240.3,884.7,4490.56,633.35,4706,615.57c107.25-8.85,205.83,40.24,294,173.39v1.46c-88.15-133.5-186.72-182.71-294-173.86-215.19,17.76-465.35,269-736.13,541C3489.84,1639.71,2945,2186.92,2414.8,1614.26h0c-610.91-572.42-1324.71-658.85-1942.89-733.7-165.42-20-324-39.24-471.91-66.7Z' /%3E%3Cpath class='cls-1' d='M0,761.1c139.66,31.36,288.6,56.75,443.8,83.2C1059,949.17,1772.56,1070.79,2396.32,1647.15l0,0c501.22,523.71,1031.75-18.56,1508.29-505.64C4185.78,854.16,4448.15,586,4674.75,567.09c119.17-10,228.4,49.19,325.25,210.57v1.57c-96.82-161.8-206-221.09-325.2-211.15C4448.45,587,4186.18,855,3905.13,1142.3,3428.35,1629.62,2897.57,2172.15,2395.85,1648h0c-623.6-576.21-1337-697.81-1952.16-802.66C288.54,818.84,139.64,793.45,0,762.11Z' /%3E%3Cpath class='cls-1' d='M0,710C130.57,744.56,269.06,775.14,413.17,807c612.65,135.25,1326.66,292.88,1964.19,873.88v0c473.36,476.69,989.23-60.58,1461.5-552.45,291.52-303.61,566.43-589.93,804.63-610,131.12-11.05,251.07,58.72,356.5,250.53v1.63c-105.4-192.28-225.34-262.21-356.45-251.17-237.94,20.06-512.76,306.28-804.17,609.78-472.51,492.11-988.63,1029.65-1462.49,552.48h0C1739.52,1100.77,1025.61,943.17,413,807.93,269,776.13,130.54,745.57,0,711Z' /%3E%3Cpath class='cls-1' d='M0,659.59C120.35,696.44,247.26,731,379.08,766.82,989.85,933,1705.57,1127.64,2358.4,1714.51h0c446.1,431.11,946.69-100.76,1413.71-597,302-320.83,589.88-626.75,840.13-648,143.08-12.17,273.81,68.71,387.75,293v1.71c-113.91-224.84-244.62-305.89-387.7-293.72-250,21.28-537.82,327.1-839.67,647.82-467.25,496.45-968.08,1028.58-1414.69,597h0c-652.7-586.75-1368.33-781.41-1979-947.53C247.16,732,120.3,697.45,0,660.61Z' /%3E%3Cpath class='cls-1' d='M0,609.89c108.46,37.88,222.14,74.73,339.91,112.9,609.87,197.7,1329.15,430.85,1999.53,1025.4h0c419.45,387,904.12-139,1364.85-639C4016.76,770.15,4318.21,443,4581,420.46c155.06-13.32,296.61,79.5,419,338.29v1.83c-122.34-259.41-263.88-352.45-418.94-339.13C4318.52,444,4017.17,771,3704.82,1110c-461,500.23-945.88,1026.45-1365.84,639C1668.71,1154.55,949.52,921.42,339.71,723.75,222,685.6,108.41,648.77,0,610.92Z' /%3E%3Cpath class='cls-1' d='M0,560.92c94,37,191.87,73.92,292.88,112,610.49,230.22,1336.19,503.89,2027.6,1108.94,393.4,344.25,861.51-175.17,1314.9-678.25,323-358.39,638.52-708.5,914.41-732.39,167-14.47,319.47,90.78,450.21,385.92v1.91c-130.7-295.81-283.13-401.31-450.16-386.84-275.62,23.87-591.05,373.86-913.93,732.14-453.63,503.34-922,1023-1315.88,678.32-691.31-604.95-1417-878.6-2027.38-1108.8C191.73,635.83,94,599,0,562Z' /%3E%3C/svg%3E")
+        no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+/* Animation cho gradient */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.row__achievements {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.achievements__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    /* position: relative;
+    gap: 30px; */
+}
+
+.achievements__count {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: relative;
+    text-align: center;
+    gap: 10px;
+}
+
+.achievements__count:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10%;
+    width: 2px;
+    height: 80%;
+    background-color: white;
+}
+
+.achievements__count:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -15px; /* Căn chỉnh đường kẻ */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 80%;
+    background-color: white;
+}
+
+.achievements__count .achievements__title-numb {
+    font-size: 3.6rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.achievements__title-desc {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+/* ============================ */
+/* Frequently */
+.frequently {
+    margin-top: 40px;
+}
+
+.frequently__title {
+    color: var(--primary-color);
+}
+
+.frequently-nav {
+    margin-top: 30px;
+}
+
+.frequently-nav__item {
+}
+
+.frequently-nav__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+
+.frequently-nav__list-item {
+}
+.frequently-nav__list-link {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--font-color);
+    background-color: #696666;
+    border-radius: 15px;
+}
+.frequently-nav__list-link__active {
+}
+.frequently-nav__sublist {
+}
+
+.frequently-nav__subitem {
+    margin: 10px auto 20px;
+    line-height: 1.4;
+    font-size: 1.6rem;
+}
+
+/* xoa o day */
+.navigation {
+    font-weight: 300;
+    max-width: 100%;
+    margin: 0 auto;
+    color: #696666;
+}
+
+.navigation__logo {
+    width: 216px;
+    margin: 0 auto;
+    padding-bottom: 18px;
+}
+
+.accordion,
+.sub-accordion {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.accordion__item {
+    background: #e7e7e7;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.accordion__item:nth-child(odd) > :first-child:not(.accordion__link_active) {
+    color: #ffffff;
+    background: var(--primary-color);
+}
+.accordion__link {
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    position: relative;
+    color: #696666;
+    text-decoration: none;
+    border-radius: 20px;
+    display: block;
+    padding: 12px 50px 12px 20px;
+}
+.accordion__link:not(.accordion__link_active):after {
+    position: absolute;
+    content: "";
+    border-top: 12px #ff8663 solid;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    right: 22px;
+    top: 50%;
+    transform: translatey(-6px);
+}
+.accordion__link:not(.accordion__link_active):hover {
+    opacity: 0.8;
+    color: #fff;
+    background: #b8b8b8;
+}
+.accordion__link:not(.accordion__link_active):hover:after {
+    border-top: 12px #ffffff solid;
+}
+
+.sub-accordion {
+    padding: 5px 20px;
+    display: none;
+    height: 0;
+    overflow: hidden;
+}
+
+.sub-accordion__item {
+    padding: 5px 0;
+}
+
+.sub-accordion__item {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+.accordion__link_active {
+    color: #ffffff;
+    background-color: #ff8663;
+}
+.accordion__link_active:after {
+    position: absolute;
+    content: "";
+    border-bottom: 12px #fff solid;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    right: 22px;
+    top: 50%;
+    transform: translatey(-6px);
+}
+.accordion__link_active + ul {
+    display: block;
+    height: 100%;
+}
+/* xoa o day */
+
+/* End Frequently */
+
+/* Footer */
+.footer {
+    margin-top: 30px;
+    padding-top: 30px;
+    background-color: var(--primary-color);
+}
+
+.row__footer-top,
+.row__footer-bottom {
+    align-items: baseline;
+}
+
+.footer__heading {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer__heading-left {
+    text-align-last: left;
+}
+
+.footer__list {
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.footer__item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Facebook */
+.footer__media {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    overflow: hidden;
+}
+
+.fb-page__control {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+}
+
+/* Footer Bottom */
+.row__footer-bottom {
+    margin-top: 60px;
+}
+
+.footer__social {
+}
+
+.footer__social-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255 255 255 / 76%);
+    padding: 10px;
+    border-radius: 8px;
+
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
+
+.footer__social-icon {
+    width: 30px;
+    height: auto;
+    fill: var(--primary-color);
+}
+
+/* Zoom In #1 */
+/* .hover01 figure img {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+} */
+.hover01 figure:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+.footer__social-icon:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+/* DMCA */
+.dmca {
+    display: block;
+    margin: 30px 0;
+    background-color: rgb(255 255 255 / 76%);
+    padding: 10px;
+    border-radius: 8px;
+}
+.dmca__link {
+    display: block;
+}
+
+.dmca__img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* App */
+.footer__app-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255 255 255 / 76%);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.footer__app-item {
+}
+.footer__app-icon {
+    width: 100px;
+    height: auto;
+    fill: var(--primary-color);
+}
+
+/* Zalo */
+.zalo-qr {
+    display: block;
+    margin: 30px 0;
+}
+.zalo {
+    background-color: rgb(255 255 255 / 76%);
+    padding: 10px;
+    border-radius: 8px;
+}
+.zalo__img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* copyright */
+.copy {
+    --copy-height: 34px;
+    background-color: #f5f5f5;
+    color: var(--font-color);
+    height: var(--copy-height);
+}
+
+.copy__desc {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 300;
+    line-height: var(--copy-height);
+}

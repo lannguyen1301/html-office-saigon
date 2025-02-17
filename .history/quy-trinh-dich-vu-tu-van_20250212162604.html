@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quy trinh dich vu tu van</title>
+    <link rel="stylesheet" href="quy-trinh-dich-vu-tu-van.css">
+</head>
+
+<body>
+    .wrapper
+    .carousel
+    - emojis = [ ["1", "spouting whale", "U+1F433 "],
+    ["2", "whale", "U+1F40B "],
+    ["3", "dolphin", "U+1F42C "],
+    ["4", "fish", "U+1F41F "],
+    ["5", "tropical fish", "U+1F420 "],
+    ["6", "blowfish", "U+1F421 "],
+    ["7", "shark", "U+1F988 "],
+    ["8", "octopus", "U+1F419 "],
+    ["9", "spiral shell", "U+1F41A "] ]
+
+    - emojis.each do |i|
+    .carousel__item
+    .carousel__item-head
+    #{i[0]}
+    .carousel__item-body
+    %p.title #{i[1]}
+    %p Unicode: #{i[2]}
+</body>
+
+</html>
